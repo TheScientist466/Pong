@@ -7,7 +7,7 @@
 class Bar
 {
 public:
-    Bar(float initXPos = windowConfig::windowSize.x / 2, sf::Vector2f barDimentions = sf::Vector2f(0, 0));
+    Bar(sf::Vector2f barDimentions = sf::Vector2f(0, 0), float initXPos = windowConfig::windowSize.x / 2);
 
 private:
     sf::RectangleShape shape;

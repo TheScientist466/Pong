@@ -1,7 +1,7 @@
 #include "Bar.hpp"
 
 
-Bar::Bar(float initXPos, sf::Vector2f size)
+Bar::Bar(sf::Vector2f size, float initXPos)
 {
     shape = sf::RectangleShape(size);
     shape.setPosition(initXPos, windowConfig::windowSize.y / 2);
