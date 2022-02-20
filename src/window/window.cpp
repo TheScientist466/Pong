@@ -18,6 +18,7 @@ void window::renderLoop()
         {
             checkEvents();
         }
+        Update();
     }
 }
 
@@ -29,7 +30,6 @@ void window::checkEvents()
             renderWindow->close();
             return;
     }
-    Update();
 }
 
 void window::Update()
