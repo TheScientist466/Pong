@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SFML/Graphics/Vertex.hpp>
 
 namespace windowConfig
