@@ -5,9 +5,9 @@
 sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(windowConfig::windowSize.x, windowConfig::windowSize.y), windowConfig::windowTitle, sf::Style::Close);;
 sf::Event windowEvent;
 
-window::window()
+window::window(ObjectHandler &objHandler)
 {
-
+    objects = &objHandler;
 }
 
 void window::renderLoop()
@@ -29,12 +29,18 @@ void window::checkEvents()
         case sf::Event::Closed:
             renderWindow->close();
             return;
+        
+        case sf::Event::KeyPressed:
+            objects->ObjectKeyResponse(windowEvent.key.code);
+            break;
     }
 }
 
 void window::Update()
 {
     renderWindow->clear();
+    for(auto &s : objects->getShapes())
+        renderWindow->draw(*s);
     renderWindow->display();
 }
 

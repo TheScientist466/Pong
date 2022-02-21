@@ -13,9 +13,17 @@ void Bar::move(int8_t yMult)
     shape.move(sf::Vector2f(0, yMult * BarSpeed));
 }
 
-sf::RectangleShape Bar::getShape()
+void Bar::move(sf::Keyboard::Key k)
 {
-    return shape;
+    if(k == keyDir.upKey)
+        this->move(-1);
+    else if (k == keyDir.downKey)
+        this->move(1);
+}
+
+sf::RectangleShape* Bar::getShape()
+{
+    return &shape;
 }
 
 void Bar::setKey(sf::Keyboard::Key _upKey, sf::Keyboard::Key _downKey)

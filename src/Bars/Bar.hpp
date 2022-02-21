@@ -17,8 +17,9 @@ public:
     KeyDir keyDir = {sf::Keyboard::W, sf::Keyboard::S};
 
 public:
-    sf::RectangleShape getShape();
+    sf::RectangleShape* getShape();
     void move(int8_t yMultiplier);
+    void move(sf::Keyboard::Key key);
 
     void setKey(sf::Keyboard::Key upKey, sf::Keyboard::Key downKey);
     void setKey(KeyDir dir);

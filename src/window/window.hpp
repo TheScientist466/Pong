@@ -1,10 +1,15 @@
 #pragma once
 
+#include "../objectHandler.hpp"
+
 class window
 {
 
+private:
+    ObjectHandler* objects;
+
 public:
-    window();
+    window(ObjectHandler&);
     ~window();
 
     void renderLoop();
