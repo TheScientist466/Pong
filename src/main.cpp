@@ -4,8 +4,6 @@
 int main(int, char**) 
 {
     window w;
-    sf::Thread t (&window::renderLoop, &w);
-    t.launch();
-    t.wait();
+    w.renderLoop();
     return 0;
 }
