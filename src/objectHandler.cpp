@@ -1,10 +1,11 @@
 #include "objectHandler.hpp"
 #include "window/windowConfig.hpp"
+#include "GameConfig.hpp"
 
 ObjectHandler::ObjectHandler()
 {
-    gameStructure.leftBar   = Bar(sf::Vector2f(10, 100), 50.f);
-    gameStructure.rightBar  = Bar(sf::Vector2f(10, 100), config::windowSize.x - 50);
+    gameStructure.leftBar   = Bar(config::barSize, config::barXPos);
+    gameStructure.rightBar  = Bar(config::barSize, config::windowSize.x - config::barXPos);
 
     gameStructure.ball = Ball(20.f, sf::Vector2f(1, 0.2));
 
