@@ -11,8 +11,8 @@ public:
 
 private:
     sf::CircleShape shape;
-    sf::Vector2f velocityDir = sf::Vector2f(0, 0);
-    float BallSpeed = config::ballSpeed;
+    sf::Vector2f velocityDir;
+    float ballSpeed = config::ballSpeed;
 
 public:
     void Move();
