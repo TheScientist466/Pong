@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "KeyDir.hpp"
 #include "../window/windowConfig.hpp"
+#include "../GameConfig.hpp"
 
 class Bar
 {
@@ -11,7 +12,7 @@ public:
 
 private:
     sf::RectangleShape shape;
-    float BarSpeed = 10.f;
+    float BarSpeed = config::barSpeed;
 
 public:
     KeyDir keyDir = {sf::Keyboard::W, sf::Keyboard::S};
