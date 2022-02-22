@@ -17,4 +17,6 @@ private:
 public:
     void move();
     sf::Shape* getShape();
+
+    void wallCollideDetect();
 };

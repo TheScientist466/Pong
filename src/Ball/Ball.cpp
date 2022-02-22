@@ -20,3 +20,9 @@ void Ball::move()
     shape.move(velocityDir * ballSpeed);
 }
 
+void Ball::wallCollideDetect()
+{
+    if( shape.getPosition().y <= shape.getRadius() || 
+        shape.getPosition().y >= config::windowSize.y - shape.getRadius())
+        velocityDir.y *= -1;
+}

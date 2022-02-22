@@ -7,7 +7,7 @@ ObjectHandler::ObjectHandler()
     gameStructure.leftBar   = Bar(config::barSize, config::barXPos);
     gameStructure.rightBar  = Bar(config::barSize, config::windowSize.x - config::barXPos);
 
-    gameStructure.ball = Ball(20.f, sf::Vector2f(1, 0.2));
+    gameStructure.ball = Ball(20.f, sf::Vector2f(0.2f, 1));
 
     shapes.push_back(gameStructure.leftBar.getShape());
     shapes.push_back(gameStructure.rightBar.getShape());
@@ -36,4 +36,5 @@ void ObjectHandler::ObjectKeyResponse(sf::Keyboard::Key keyPressed)
 void ObjectHandler::ObjectFrameResponse()
 {
     gameStructure.ball.move();
+    gameStructure.ball.wallCollideDetect();
 }
