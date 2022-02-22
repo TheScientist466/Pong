@@ -19,4 +19,5 @@ public:
     sf::Shape* getShape();
 
     void wallCollideDetect();
+    void BarCollide();
 };
