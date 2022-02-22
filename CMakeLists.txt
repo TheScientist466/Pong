@@ -12,6 +12,7 @@ file(
     "src/*.cpp"
     "src/window/*.cpp"
     "src/Bars/*.cpp"
+    "src/Ball/*.cpp"
 )
 
 add_executable(${PROJECT_NAME} ${source_files})
