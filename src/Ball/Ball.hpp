@@ -15,6 +15,6 @@ private:
     float ballSpeed = config::ballSpeed;
 
 public:
-    void Move();
+    void move();
     sf::Shape* getShape();
 };

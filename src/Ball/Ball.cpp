@@ -15,7 +15,8 @@ sf::Shape* Ball::getShape()
     return &shape;
 }
 
-void Ball::Move()
+void Ball::move()
 {
     shape.move(velocityDir * ballSpeed);
 }
+

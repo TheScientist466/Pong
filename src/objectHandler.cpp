@@ -35,5 +35,5 @@ void ObjectHandler::ObjectKeyResponse(sf::Keyboard::Key keyPressed)
 
 void ObjectHandler::ObjectFrameResponse()
 {
-    gameStructure.ball.Move();
+    gameStructure.ball.move();
 }
