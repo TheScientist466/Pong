@@ -39,6 +39,7 @@ void window::checkEvents()
 
 void window::Update()
 {
+    objects->ObjectFrameResponse();
     renderWindow->clear();
     for(auto &s : objects->getShapes())
         renderWindow->draw(*s);
