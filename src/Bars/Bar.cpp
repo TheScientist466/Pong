@@ -5,7 +5,7 @@ Bar::Bar(sf::Vector2f size, float initXPos)
 {
     shape = sf::RectangleShape(size);
     shape.setOrigin(size.x / 2, size.y / 2);
-    shape.setPosition(initXPos, windowConfig::windowSize.y / 2);
+    shape.setPosition(initXPos, config::windowSize.y / 2);
 }
 
 void Bar::move(int8_t yMult)

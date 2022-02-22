@@ -2,12 +2,13 @@
 #include "windowConfig.hpp"
 #include "window.hpp"
 
-sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(windowConfig::windowSize.x, windowConfig::windowSize.y), windowConfig::windowTitle, sf::Style::Close);;
+sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(config::windowSize.x, config::windowSize.y), config::windowTitle, sf::Style::Close);;
 sf::Event windowEvent;
 
 window::window(ObjectHandler &objHandler)
 {
     objects = &objHandler;
+    renderWindow->setFramerateLimit(config::framerate);
 }
 
 void window::renderLoop()
