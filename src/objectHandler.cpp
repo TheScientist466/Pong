@@ -48,9 +48,9 @@ void ObjectHandler::ObjectFrameResponse()
     {
         if((ballPos.x <= xBouncePos || ballPos.x >= config::windowSize.x - xBouncePos))
         {
-            if((ballPos.y < leftBarYPos + config::barSize.y / 2 && ballPos.y > leftBarYPos - config::barSize.y))
+            if((ballPos.y <= leftBarYPos + config::barSize.y / 2 && ballPos.y >= leftBarYPos - config::barSize.y))
                 gameStructure.ball.BarCollide();
-            else if ((ballPos.y < rightBarYPos + config::barSize.y / 2 && ballPos.y > rightBarYPos - config::barSize.y))
+            else if ((ballPos.y <= rightBarYPos + config::barSize.y / 2 && ballPos.y >= rightBarYPos - config::barSize.y))
                 gameStructure.ball.BarCollide();
         }
     }
