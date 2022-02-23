@@ -11,4 +11,6 @@ namespace config
 
     static const float barSpeed = 10.f;
     static const float ballSpeed = 2.f;
+
+    static const sf::Vector2f ballInitDir = sf::Vector2f(1, 0.5);
 }

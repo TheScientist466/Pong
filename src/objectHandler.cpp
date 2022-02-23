@@ -2,12 +2,14 @@
 #include "window/windowConfig.hpp"
 #include "GameConfig.hpp"
 
+static const float xBouncePos = (config::barXPos + config::barSize.x + config::ballRadius);
+
 ObjectHandler::ObjectHandler()
 {
     gameStructure.leftBar   = Bar(config::barSize, config::barXPos);
     gameStructure.rightBar  = Bar(config::barSize, config::windowSize.x - config::barXPos);
 
-    gameStructure.ball = Ball(20.f, sf::Vector2f(0.2f, 1));
+    gameStructure.ball = Ball(20.f, config::ballInitDir);
 
     shapes.push_back(gameStructure.leftBar.getShape());
     shapes.push_back(gameStructure.rightBar.getShape());
@@ -37,4 +39,15 @@ void ObjectHandler::ObjectFrameResponse()
 {
     gameStructure.ball.move();
     gameStructure.ball.wallCollideDetect();
+
+    const sf::Vector2f &ballPos =   gameStructure.ball.getShape()->getPosition();
+    const float &leftBarYPos =      gameStructure.leftBar.getShape()->getPosition().y;
+    const float &rightBarYPos =     gameStructure.rightBar.getShape()->getPosition().y;
+    if(ballPos.x <= xBouncePos || ballPos.x >= config::windowSize.x - xBouncePos)
+    {
+        if((ballPos.y <= leftBarYPos + config::barSize.y / 2 && ballPos.y >= leftBarYPos - config::barSize.y))
+            gameStructure.ball.BarCollide();
+        else if ((ballPos.y <= rightBarYPos + config::barSize.y / 2 && ballPos.y >= rightBarYPos - config::barSize.y))
+            gameStructure.ball.BarCollide();
+    }
 }
