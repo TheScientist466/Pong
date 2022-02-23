@@ -44,7 +44,7 @@ void window::checkEvents()
 void window::Update()
 {
     objects->ObjectFrameResponse();
-    renderWindow->clear();
+    renderWindow->clear(config::gameColors::background);
     for(auto &s : objects->getShapes())
         renderWindow->draw(*s);
     renderWindow->display();

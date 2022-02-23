@@ -6,10 +6,10 @@ static const float xBouncePos = (config::barXPos + config::barSize.x + config::b
 
 ObjectHandler::ObjectHandler()
 {
-    gameStructure.leftBar   = Bar(config::barSize, config::barXPos);
-    gameStructure.rightBar  = Bar(config::barSize, config::windowSize.x - config::barXPos);
+    gameStructure.leftBar   = Bar(config::barSize, config::barXPos, config::gameColors::LeftBarColor);
+    gameStructure.rightBar  = Bar(config::barSize, config::windowSize.x - config::barXPos, config::gameColors::RightBarColor);
 
-    gameStructure.ball = Ball(20.f, config::ballInitDir);
+    gameStructure.ball = Ball(20.f, config::ballInitDir, config::gameColors::BallColor);
 
     shapes.push_back(gameStructure.leftBar.getShape());
     shapes.push_back(gameStructure.rightBar.getShape());

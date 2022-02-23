@@ -7,7 +7,7 @@ class Ball
 {
 
 public:
-    Ball(float radius = 0.f, sf::Vector2f initDir = sf::Vector2f(0, 0));
+    Ball(float radius = 0.f, sf::Vector2f initDir = sf::Vector2f(0, 0), sf::Color color = sf::Color::White);
 
 private:
     sf::CircleShape shape;

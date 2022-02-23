@@ -2,7 +2,7 @@
 #include "../window/windowConfig.hpp"
 #include <math.h>
 
-Ball::Ball(float radius, sf::Vector2f initDir)
+Ball::Ball(float radius, sf::Vector2f initDir, sf::Color color)
 {
     shape = sf::CircleShape(radius);
     shape.setOrigin(radius, radius);
@@ -10,6 +10,8 @@ Ball::Ball(float radius, sf::Vector2f initDir)
 
     float magnitude = std::sqrt(std::pow(initDir.x, 2) + std::pow(initDir.y, 2));
     velocityDir = sf::Vector2f(initDir.x/magnitude, initDir.y/magnitude);
+
+    shape.setFillColor(color);
 }
 
 sf::Shape* Ball::getShape()

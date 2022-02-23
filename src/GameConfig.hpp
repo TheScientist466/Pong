@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Theme/colorThemes.hpp"
 
 namespace config
 {
@@ -13,4 +14,13 @@ namespace config
     static const float ballSpeed = 3.5f;
 
     static const sf::Vector2f ballInitDir = sf::Vector2f(-1, 0.5);
+
+    namespace gameColors
+    {
+        static const sf::Color background = colorThemes::Nord::PolarNight::d1;
+
+        static const sf::Color LeftBarColor = colorThemes::Nord::Arora::Green;
+        static const sf::Color RightBarColor = colorThemes::Nord::Arora::Purple;
+        static const sf::Color BallColor = colorThemes::Nord::Arora::Red;
+    }
 }

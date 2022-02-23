@@ -8,7 +8,7 @@
 class Bar
 {
 public:
-    Bar(sf::Vector2f barDimentions = sf::Vector2f(0, 0), float initXPos = config::windowSize.x / 2);
+    Bar(sf::Vector2f barDimentions = sf::Vector2f(0, 0), float initXPos = config::windowSize.x / 2, sf::Color color = sf::Color::White);
 
 private:
     sf::RectangleShape shape;

@@ -1,11 +1,13 @@
 #include "Bar.hpp"
 
 
-Bar::Bar(sf::Vector2f size, float initXPos)
+Bar::Bar(sf::Vector2f size, float initXPos, sf::Color color)
 {
     shape = sf::RectangleShape(size);
     shape.setOrigin(size.x / 2, size.y / 2);
     shape.setPosition(initXPos, config::windowSize.y / 2);
+    
+    shape.setFillColor(color);
 }
 
 void Bar::move(int8_t yMult)
