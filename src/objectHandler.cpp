@@ -43,11 +43,15 @@ void ObjectHandler::ObjectFrameResponse()
     const sf::Vector2f &ballPos =   gameStructure.ball.getShape()->getPosition();
     const float &leftBarYPos =      gameStructure.leftBar.getShape()->getPosition().y;
     const float &rightBarYPos =     gameStructure.rightBar.getShape()->getPosition().y;
-    if(ballPos.x <= xBouncePos || ballPos.x >= config::windowSize.x - xBouncePos)
+
+    if((ballPos.x > xBouncePos - config::barSize.x && ballPos.x < config::windowSize.x - xBouncePos + config::barSize.x))
     {
-        if((ballPos.y <= leftBarYPos + config::barSize.y / 2 && ballPos.y >= leftBarYPos - config::barSize.y))
-            gameStructure.ball.BarCollide();
-        else if ((ballPos.y <= rightBarYPos + config::barSize.y / 2 && ballPos.y >= rightBarYPos - config::barSize.y))
-            gameStructure.ball.BarCollide();
+        if((ballPos.x <= xBouncePos || ballPos.x >= config::windowSize.x - xBouncePos))
+        {
+            if((ballPos.y < leftBarYPos + config::barSize.y / 2 && ballPos.y > leftBarYPos - config::barSize.y))
+                gameStructure.ball.BarCollide();
+            else if ((ballPos.y < rightBarYPos + config::barSize.y / 2 && ballPos.y > rightBarYPos - config::barSize.y))
+                gameStructure.ball.BarCollide();
+        }
     }
 }
