@@ -9,7 +9,11 @@ window::window(ObjectHandler &objHandler)
 {
     objects = &objHandler;
     renderWindow->setFramerateLimit(config::framerate);
-}
+    renderWindow->setPosition(sf::Vector2i( 
+        (config::screenResolution.x - config::windowSize.x) / 2, 
+        (config::screenResolution.y - config::windowSize.y) / 2
+        ));
+} 
 
 void window::renderLoop()
 {

@@ -10,7 +10,7 @@ namespace config
     static const float ballRadius = 10.f;
 
     static const float barSpeed = 10.f;
-    static const float ballSpeed = 2.f;
+    static const float ballSpeed = 3.5f;
 
-    static const sf::Vector2f ballInitDir = sf::Vector2f(1, 0.5);
+    static const sf::Vector2f ballInitDir = sf::Vector2f(-1, 0.5);
 }
