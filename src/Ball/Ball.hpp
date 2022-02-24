@@ -18,6 +18,9 @@ public:
     void move();
     sf::Shape* getShape();
 
+    void restart();
+
     void wallCollideDetect();
     void BarCollide();
+    void BarCollide(sf::Vector2f BarPos, bool inv);
 };

@@ -33,6 +33,12 @@ void ObjectHandler::ObjectKeyResponse(sf::Keyboard::Key keyPressed)
 {
     gameStructure.leftBar.move(keyPressed);
     gameStructure.rightBar.move(keyPressed);
+
+    switch (keyPressed)
+    {
+    case sf::Keyboard::R:
+        gameStructure.ball.restart();
+    }
 }
 
 void ObjectHandler::ObjectFrameResponse()
@@ -49,9 +55,9 @@ void ObjectHandler::ObjectFrameResponse()
         if((ballPos.x <= xBouncePos || ballPos.x >= config::windowSize.x - xBouncePos))
         {
             if((ballPos.y <= leftBarYPos + config::barSize.y / 2 && ballPos.y >= leftBarYPos - config::barSize.y / 2))
-                gameStructure.ball.BarCollide();
+                gameStructure.ball.BarCollide(gameStructure.rightBar.getShape()->getPosition(), false);
             else if ((ballPos.y <= rightBarYPos + config::barSize.y / 2 && ballPos.y >= rightBarYPos - config::barSize.y / 2))
-                gameStructure.ball.BarCollide();
+                gameStructure.ball.BarCollide(gameStructure.rightBar.getShape()->getPosition(), true);
         }
     }
 }
